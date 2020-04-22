@@ -45,12 +45,12 @@ RCT_EXPORT_METHOD(call:(NSString *)urlString userInfo:(NSDictionary *)userInfo c
             builder.room = urlString;
             builder.userInfo = _userInfo;
             builder.subject = config[@"subject"];
-            builder.getAudioOnly = false;
-            builder.getAudioMuted = config[@"audioMuted"];
-            builder.getVideoMuted = config[@"videoMuted"];
-        }];
-        options.setFeatureFlag("invite.enabled", false);
-        options.setFeatureFlag("calendar.enabled", false);
+            builder.audioOnly = false;
+            builder.audioMuted = config[@"audioMuted"];
+            builder.videoMuted = config[@"videoMuted"];
+          [builder setFeatureFlag:@"invite.enabled" withBoolean:@false];
+          [builder setFeatureFlag:@"calendar.enabled" withBoolean:@false];
+        }]; 
         [jitsiMeetView join:options];
     });
 }
