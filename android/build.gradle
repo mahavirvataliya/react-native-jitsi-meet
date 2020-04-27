@@ -37,7 +37,7 @@ android {
 
 repositories {
   maven {
-      url "https://github.com/mahavirvataliya/jitsi-maven-repo-custom/raw/master/releases"
+      url "https://github.com/mahavirvataliya/jitsi-maven-repo-custom/raw/develop/releases"
   }
   google()
   mavenCentral()
